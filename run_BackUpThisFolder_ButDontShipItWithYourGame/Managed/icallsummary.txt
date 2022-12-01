@@ -178,6 +178,11 @@ UnityEngine.AudioSettings::StopAudioOutput
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::set_enabled
 UnityEngine.Camera::get_stereoEnabled
+UnityEngine.Camera::GetAllCamerasCount
+UnityEngine.Camera::GetAllCamerasImpl
+UnityEngine.Camera::get_cullingMask
+UnityEngine.Camera::get_eventMask
+UnityEngine.Camera::get_targetDisplay
 UnityEngine.Camera::get_farClipPlane
 UnityEngine.Camera::get_fieldOfView
 UnityEngine.Camera::get_nearClipPlane
@@ -185,11 +190,15 @@ UnityEngine.Camera::AddCommandBufferImpl
 UnityEngine.Camera::RemoveCommandBufferImpl
 UnityEngine.Camera::ResetProjectionMatrix
 UnityEngine.Camera::ScreenPointToRay_Injected
+UnityEngine.Camera::get_pixelRect_Injected
 UnityEngine.Camera::get_projectionMatrix_Injected
 UnityEngine.Camera::set_clearFlags
 UnityEngine.Camera::set_fieldOfView
 UnityEngine.Camera::set_projectionMatrix_Injected
 UnityEngine.Camera::get_clearFlags
+UnityEngine.Camera::get_targetTexture
+UnityEngine.CameraRaycastHelper::RaycastTry2D_Injected
+UnityEngine.CameraRaycastHelper::RaycastTry_Injected
 UnityEngine.Collider::set_enabled
 UnityEngine.Component::GetComponentFastPath
 UnityEngine.Component::get_gameObject
@@ -204,6 +213,8 @@ UnityEngine.CubemapArray::get_isReadable
 UnityEngine.Debug::ExtractStackTraceNoAlloc
 UnityEngine.DebugLogHandler::Internal_Log
 UnityEngine.DebugLogHandler::Internal_LogException
+UnityEngine.Display::RelativeMouseAtImpl
+UnityEngine.Display::GetSystemExtImpl
 UnityEngine.Experimental.Rendering.BuiltinRuntimeReflectionSystem::BuiltinUpdate
 UnityEngine.Experimental.Rendering.GraphicsFormatUtility::CanDecompressFormat
 UnityEngine.Experimental.Rendering.GraphicsFormatUtility::IsCompressedTextureFormat
@@ -219,6 +230,7 @@ UnityEngine.GameObject::GetComponentsInternal
 UnityEngine.GameObject::get_activeSelf
 UnityEngine.GameObject::GetComponentFastPath
 UnityEngine.GameObject::Internal_CreateGameObject
+UnityEngine.GameObject::SendMessage
 UnityEngine.GameObject::SetActive
 UnityEngine.GameObject::set_layer
 UnityEngine.GameObject::Internal_AddComponentWithType
@@ -230,6 +242,12 @@ UnityEngine.GL::GLIssuePluginEvent
 UnityEngine.Gradient::Internal_Equals
 UnityEngine.Gradient::Init
 UnityEngine.Gradient::Cleanup
+UnityEngine.Input::CheckDisabled
+UnityEngine.Input::GetMouseButton
+UnityEngine.Input::GetMouseButtonDown
+UnityEngine.Input::get_touchCount
+UnityEngine.Input::GetTouch_Injected
+UnityEngine.Input::get_mousePosition_Injected
 UnityEngine.IntegratedSubsystem::IsRunning
 UnityEngine.IntegratedSubsystem::SetHandle
 UnityEngine.IntegratedSubsystem::Start
@@ -320,6 +338,7 @@ UnityEngine.Object::SetName
 UnityEngine.Object::set_hideFlags
 UnityEngine.Object::Internal_CloneSingle
 UnityEngine.Object::Internal_CloneSingleWithParent
+UnityEngine.Object::Internal_InstantiateSingle_Injected
 UnityEngine.Object::FindObjectsOfType
 UnityEngine.ParticleSystem::EmitOld_Internal
 UnityEngine.ParticleSystem::Emit_Injected
