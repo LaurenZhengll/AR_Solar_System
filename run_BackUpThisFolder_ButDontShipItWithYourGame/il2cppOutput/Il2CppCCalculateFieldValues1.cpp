@@ -15113,6 +15113,16 @@ struct Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9  : public MonoBe
 	ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* ___aRRaycastManager_7;
 	// System.Collections.Generic.List`1<UnityEngine.XR.ARFoundation.ARRaycastHit> Raycast_script::hits
 	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ___hits_8;
+	// UnityEngine.Vector2 Raycast_script::touchPoint1
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___touchPoint1_9;
+	// UnityEngine.Vector2 Raycast_script::touchPoint2
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___touchPoint2_10;
+	// System.Single Raycast_script::currDistance
+	float ___currDistance_11;
+	// System.Single Raycast_script::prevDistance
+	float ___prevDistance_12;
+	// System.Boolean Raycast_script::firstPinch
+	bool ___firstPinch_13;
 };
 
 // UnityEngine.SpatialTracking.TrackedPoseDriver
@@ -19731,9 +19741,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4290[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4293[2] = 
 {
 	static_cast<int32_t>(offsetof(Estimate_light_t1572B651046333343E24515758A63968D72D4209, ___aRCamera_4)),static_cast<int32_t>(offsetof(Estimate_light_t1572B651046333343E24515758A63968D72D4209, ___light_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4294[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4294[10] = 
 {
-	static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___landPrefab_4)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___landedObject_5)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___landed_6)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___aRRaycastManager_7)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___hits_8)),};
+	static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___landPrefab_4)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___landedObject_5)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___landed_6)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___aRRaycastManager_7)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___hits_8)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___touchPoint1_9)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___touchPoint2_10)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___currDistance_11)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___prevDistance_12)),static_cast<int32_t>(offsetof(Raycast_script_tD254F1A1A9C0EEE648D4D1933D68A5DCBEA592D9, ___firstPinch_13)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4298[4] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};
