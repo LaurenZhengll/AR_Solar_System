@@ -6,6 +6,8 @@ using UnityEngine.XR.ARSubsystems;
 
 public class Raycast_script : MonoBehaviour
 {
+    public static string selected;
+
     public GameObject landPrefab;
     GameObject landedObject;
     bool landed;
@@ -29,49 +31,53 @@ public class Raycast_script : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.touchCount == 1) // touch point == 1. if user touch screen using one finger, land or move the object
+    {   
+        if (selected == "earth")
         {
-            if (aRRaycastManager.Raycast(Input.GetTouch(0).position, hits, TrackableType.PlaneWithinPolygon)) // Input.GetTouch(0): first touch point. if user touch position within hits
+            if (Input.touchCount == 1) // touch point == 1. if user touch screen using one finger, land or move the object
             {
-                var firstHitPose = hits[0].pose; // hit[0] is the first hitted plane
-                if (!landed) // if the object is not landed
+                if (aRRaycastManager.Raycast(Input.GetTouch(0).position, hits, TrackableType.PlaneWithinPolygon)) // Input.GetTouch(0): first touch point. if user touch position within hits
                 {
-                    landedObject = Instantiate(landPrefab, firstHitPose.position, firstHitPose.rotation);  // land the prefab at the plane's position and rotation
-                    landed = true;
+                    var firstHitPose = hits[0].pose; // hit[0] is the first hitted plane
+                    if (!landed) // if the object is not landed
+                    {
+                        landedObject = Instantiate(landPrefab, firstHitPose.position, firstHitPose.rotation);  // land the prefab at the plane's position and rotation
+                        landed = true;
+                    }
+                    else
+                    {
+                        landedObject.transform.position = firstHitPose.position;
+                    }
                 }
-                else
+            }
+
+            if (Input.touchCount == 2 && landed)  //if user touch screen using two fingers, scale the object
+            {
+                touchPoint1 = Input.GetTouch(0).position;
+                touchPoint2 = Input.GetTouch(1).position;
+                currDistance = touchPoint2.magnitude - touchPoint1.magnitude;
+                if (firstPinch)
                 {
-                    landedObject.transform.position = firstHitPose.position;
+                    prevDistance = currDistance;
+                    firstPinch = false;
+                }
+                if (currDistance != prevDistance)
+                {
+                    landedObject.transform.localScale *= currDistance / prevDistance;
+                    prevDistance = currDistance;
                 }
             }
-        }
-
-        if (Input.touchCount == 2 && landed)  //if user touch screen using two fingers, scale the object
-        {
-            touchPoint1 = Input.GetTouch(0).position;
-            touchPoint2 = Input.GetTouch(1).position;
-            currDistance = touchPoint2.magnitude - touchPoint1.magnitude;
-            if (firstPinch)
+            else
             {
-                prevDistance = currDistance;
-                firstPinch = false;
+                firstPinch = true;
             }
-            if (currDistance != prevDistance)
+
+            if (Input.touchCount == 3 && landed && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(1).phase == TouchPhase.Moved && Input.GetTouch(2).phase == TouchPhase.Moved)  //rotate
             {
-                landedObject.transform.localScale *= currDistance / prevDistance;
-                prevDistance = currDistance;
+                landedObject.transform.Rotate(0f, Input.GetTouch(0).deltaPosition.x, 0f);
             }
         }
-        else
-        {
-            firstPinch = true;
-        }
-
-        if (Input.touchCount == 3 && landed && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(1).phase == TouchPhase.Moved && Input.GetTouch(2).phase == TouchPhase.Moved)  //rotate
-        {
-            landedObject.transform.Rotate(0f, Input.GetTouch(0).deltaPosition.x, 0f);
-        }
+        
 
     }
 }
