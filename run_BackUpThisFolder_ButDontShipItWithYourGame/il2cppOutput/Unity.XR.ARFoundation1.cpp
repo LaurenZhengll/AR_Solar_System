@@ -18056,7 +18056,7 @@ IL_0022:
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_5 = ___texture1;
 		NullCheck(L_5);
 		bool L_6;
-		L_6 = VirtualFuncInvoker0< bool >::Invoke(11 /* System.Boolean UnityEngine.Texture::get_isReadable() */, L_5);
+		L_6 = VirtualFuncInvoker0< bool >::Invoke(8 /* System.Boolean UnityEngine.Texture::get_isReadable() */, L_5);
 		if (L_6)
 		{
 			goto IL_0035;
@@ -18101,11 +18101,11 @@ IL_0035:
 			Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_13 = ___texture1;
 			NullCheck(L_13);
 			int32_t L_14;
-			L_14 = VirtualFuncInvoker0< int32_t >::Invoke(7 /* System.Int32 UnityEngine.Texture::get_height() */, L_13);
+			L_14 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Int32 UnityEngine.Texture::get_height() */, L_13);
 			Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_15 = ___texture1;
 			NullCheck(L_15);
 			int32_t L_16;
-			L_16 = VirtualFuncInvoker0< int32_t >::Invoke(5 /* System.Int32 UnityEngine.Texture::get_width() */, L_15);
+			L_16 = VirtualFuncInvoker0< int32_t >::Invoke(4 /* System.Int32 UnityEngine.Texture::get_width() */, L_15);
 			Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_17;
 			memset((&L_17), 0, sizeof(L_17));
 			Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_17), L_11, ((float)(((float)il2cpp_codegen_multiply(L_12, ((float)L_14)))/((float)L_16))), /*hidden argument*/NULL);
@@ -18132,11 +18132,11 @@ IL_007e_1:
 			Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_26 = ___texture1;
 			NullCheck(L_26);
 			int32_t L_27;
-			L_27 = VirtualFuncInvoker0< int32_t >::Invoke(5 /* System.Int32 UnityEngine.Texture::get_width() */, L_26);
+			L_27 = VirtualFuncInvoker0< int32_t >::Invoke(4 /* System.Int32 UnityEngine.Texture::get_width() */, L_26);
 			Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_28 = ___texture1;
 			NullCheck(L_28);
 			int32_t L_29;
-			L_29 = VirtualFuncInvoker0< int32_t >::Invoke(7 /* System.Int32 UnityEngine.Texture::get_height() */, L_28);
+			L_29 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Int32 UnityEngine.Texture::get_height() */, L_28);
 			Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A L_30;
 			memset((&L_30), 0, sizeof(L_30));
 			Vector2Int__ctor_mC20D1312133EB8CB63EC11067088B043660F11CE_inline((&L_30), L_27, L_29, /*hidden argument*/NULL);
