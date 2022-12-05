@@ -32,7 +32,7 @@ public class Raycast_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if (selected == "earth")
+        if (selected == "Earth")
         {
             if (Input.touchCount == 1) // touch point == 1. if user touch screen using one finger, land or move the object
             {
