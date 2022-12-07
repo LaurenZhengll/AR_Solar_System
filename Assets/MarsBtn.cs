@@ -18,6 +18,6 @@ public class MarsBtn : MonoBehaviour
 
     public void onBtnClicked()
     {
-        Raycast_script.selected = "Mars";
+        OriginScript.btnSelected = "Mars";
     }
 }

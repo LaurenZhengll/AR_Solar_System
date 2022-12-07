@@ -21,6 +21,6 @@ public class earthBtn : MonoBehaviour
 
     public void onBtnClicked()
     {
-        Raycast_script.selected = "Earth";
+        OriginScript.btnSelected = "Earth";
     }
 }

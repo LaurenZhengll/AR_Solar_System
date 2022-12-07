@@ -528,6 +528,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707057180}
   m_CullTransparentMesh: 1
+--- !u!1 &782628375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6553456924429858553, guid: c6ceeada126e93e4794003a1d5a30b76, type: 3}
+  m_PrefabInstance: {fileID: 6553456924111391088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &782628380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782628375}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050060f50f2f07c409dac911da302a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1055831077
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +839,7 @@ RectTransform:
   m_GameObject: {fileID: 1300114912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7158, y: 1.7158, z: 1.7158}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 707057181}
@@ -831,7 +848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -415.27405, y: -158}
+  m_AnchoredPosition: {x: 97, y: -136}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300114914
@@ -1021,6 +1038,7 @@ GameObject:
   - component: {fileID: 1382171250}
   - component: {fileID: 1382171254}
   - component: {fileID: 1382171253}
+  - component: {fileID: 1382171255}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -1078,7 +1096,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382171249}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a09c3822cc3e644b4b44577efed571, type: 3}
   m_Name: 
@@ -1097,6 +1115,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RaycastPrefab: {fileID: 0}
+--- !u!114 &1382171255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382171249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc19f7aa9533e4b40baa387252f98ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earthPrefab: {fileID: 6553456924429858553, guid: c6ceeada126e93e4794003a1d5a30b76, type: 3}
+  marsPrefab: {fileID: 1437665553499551792, guid: 436f3a6349da43f42a7ccc90d047d269, type: 3}
 --- !u!1 &1856366382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1158,7 @@ RectTransform:
   m_GameObject: {fileID: 1856366382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9721, y: 1.9721, z: 1.9721}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1055831078}
@@ -1135,7 +1167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -156}
+  m_AnchoredPosition: {x: -427, y: -136}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856366384
