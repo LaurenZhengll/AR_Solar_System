@@ -22,5 +22,6 @@ public class earthBtn : MonoBehaviour
     public void onBtnClicked()
     {
         OriginScript.btnSelected = "Earth";
+        OriginScript.buttonClicked = true;
     }
 }

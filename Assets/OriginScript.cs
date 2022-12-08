@@ -25,6 +25,9 @@ public class OriginScript : MonoBehaviour
     bool firstPinch;
     GameObject prevPrefab;
 
+    public static bool buttonClicked = false;
+    //IEnumerator currTransCoroutine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,17 +39,38 @@ public class OriginScript : MonoBehaviour
     {
         if (btnSelected == "Earth")
         {
-            landPrefab = earthPrefab;          
+            landPrefab = earthPrefab;
         }
         else if (btnSelected == "Mars")
         {
             landPrefab = marsPrefab;
         }
         transform(landPrefab);
+
+        //if (Input.touchCount > 0)
+        //{
+        //    if (currTransCoroutine != null)
+        //    {
+        //        StopCoroutine(currTransCoroutine);
+        //    }
+
+        //    if (btnSelected == "Earth")
+        //    {
+        //        landPrefab = earthPrefab;
+        //    }
+        //    else if (btnSelected == "Mars")
+        //    {
+        //        landPrefab = marsPrefab;
+        //    }
+        //    currTransCoroutine = transform(landPrefab);
+        //    StartCoroutine(currTransCoroutine);
+        //}
+
+
     }
 
-    public void transform(GameObject landPrefab)
-    {
+    void transform(GameObject landPrefab)
+    {     
         if (!prefabMap.ContainsKey(landPrefab))
         {
             landed = false;
@@ -61,25 +85,38 @@ public class OriginScript : MonoBehaviour
             {
                 firstPinch = true;
             }
-        }  
+        }
 
         if (Input.touchCount == 1) // touch point == 1. if user touch screen using one finger, land or move the object
         {
-            if (aRRaycastManager.Raycast(Input.GetTouch(0).position, hits, TrackableType.PlaneWithinPolygon)) // Input.GetTouch(0): first touch point. if user touch position within hits
+            Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                var firstHitPose = hits[0].pose; // hit[0] is the first hitted plane
-                if (!landed) // if the object is not landed
+                if (hit.collider.tag == "Planet")
                 {
-                    landedObject = Instantiate(landPrefab, firstHitPose.position, firstHitPose.rotation);  // land the prefab at the plane's position and rotation
-                    landed = true;
-                    prefabMap.Add(landPrefab, new Tuple<GameObject, bool, bool>(landedObject, landed, firstPinch));
-                    //prefabMap[landPrefab].Add(landedObject);
-                    //prefabMap[landPrefab].Add(landed);
-                    //prefabMap[landPrefab].Add(firstPinch);
+                    if (hit.collider.name == "Earth")
+                    {
+
+                    }
                 }
                 else
                 {
-                    landedObject.transform.position = firstHitPose.position;
+                    //yield return new WaitForSeconds(Time.deltaTime / 2f);
+                        
+                    if (!buttonClicked && aRRaycastManager.Raycast(Input.GetTouch(0).position, hits, TrackableType.PlaneWithinPolygon)) // Input.GetTouch(0): first touch point. if user touch position within hits
+                    {
+                        var firstHitPose = hits[0].pose; // hit[0] is the first hitted plane
+                        if (!landed) // if the object is not landed
+                        {
+                            landedObject = Instantiate(landPrefab, firstHitPose.position, firstHitPose.rotation);  // land the prefab at the plane's position and rotation
+                            landed = true;
+                            prefabMap.Add(landPrefab, new Tuple<GameObject, bool, bool>(landedObject, landed, firstPinch));
+                        }
+                        else
+                        {
+                            landedObject.transform.position = firstHitPose.position;
+                        }
+                    }
                 }
             }
         }
@@ -92,9 +129,8 @@ public class OriginScript : MonoBehaviour
             if (firstPinch)
             {
                 prevDistance = currDistance;
-                firstPinch = false;    
-                prefabMap[landPrefab] = new Tuple<GameObject, bool, bool>(landedObject, landed, firstPinch);
-                //prefabMap[landPrefab][2] = firstPinch;
+                firstPinch = false;
+                prefabMap[landPrefab] = new Tuple<GameObject, bool, bool>(landedObject, landed, firstPinch);               
             }
             if (currDistance != prevDistance)
             {
@@ -108,7 +144,7 @@ public class OriginScript : MonoBehaviour
             if (prefabMap.ContainsKey(landPrefab))
             {
                 prefabMap[landPrefab] = new Tuple<GameObject, bool, bool>(landedObject, landed, firstPinch);
-            }             
+            }
         }
 
         if (Input.touchCount == 3 && landed && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(1).phase == TouchPhase.Moved && Input.GetTouch(2).phase == TouchPhase.Moved)  //rotate
@@ -117,5 +153,6 @@ public class OriginScript : MonoBehaviour
         }
 
         prevPrefab = landPrefab;
+        buttonClicked = false;              
     }
 }

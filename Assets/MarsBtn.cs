@@ -19,5 +19,6 @@ public class MarsBtn : MonoBehaviour
     public void onBtnClicked()
     {
         OriginScript.btnSelected = "Mars";
+        OriginScript.buttonClicked = true;
     }
 }
