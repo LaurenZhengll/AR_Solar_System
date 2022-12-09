@@ -50,29 +50,17 @@ extern void MarsBtn__ctor_m608AD704624F0EC4A0DFAE2A951A780FE5271358 (void);
 extern void OriginScript_Start_m77E46D73780238D292E97396C45C145CA60CD375 (void);
 // 0x00000013 System.Void OriginScript::Update()
 extern void OriginScript_Update_mB00E5F41515112D3682E0AA526977AB035DB465F (void);
-// 0x00000014 System.Collections.IEnumerator OriginScript::transform(UnityEngine.GameObject)
-extern void OriginScript_transform_mBDECE436CB53C6EA54204F2432005F95C9F8B3D5 (void);
+// 0x00000014 System.Void OriginScript::transform(UnityEngine.GameObject)
+extern void OriginScript_transform_mB038B82D93298E985230210A4E12ADC09F43A058 (void);
 // 0x00000015 System.Void OriginScript::.ctor()
 extern void OriginScript__ctor_m7BFD25907BE6315D25F4E6B2F5C2CECBECB18C57 (void);
-// 0x00000016 System.Void OriginScript/<transform>d__19::.ctor(System.Int32)
-extern void U3CtransformU3Ed__19__ctor_mB8460E504222854AAA7E25035985C1C3FAF3135B (void);
-// 0x00000017 System.Void OriginScript/<transform>d__19::System.IDisposable.Dispose()
-extern void U3CtransformU3Ed__19_System_IDisposable_Dispose_m77B3DE20C1EBBB89334D8640C5FA1D05FE739E8B (void);
-// 0x00000018 System.Boolean OriginScript/<transform>d__19::MoveNext()
-extern void U3CtransformU3Ed__19_MoveNext_mF3BAB56C1E0EDF93BC968F886DD395D992014A5C (void);
-// 0x00000019 System.Object OriginScript/<transform>d__19::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CtransformU3Ed__19_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFD8D88DBD7F7E6008B99A39C792555EFB0ED620C (void);
-// 0x0000001A System.Void OriginScript/<transform>d__19::System.Collections.IEnumerator.Reset()
-extern void U3CtransformU3Ed__19_System_Collections_IEnumerator_Reset_mCAC51DF732D71B0F5A33C4376CB4C118BE3B50A7 (void);
-// 0x0000001B System.Object OriginScript/<transform>d__19::System.Collections.IEnumerator.get_Current()
-extern void U3CtransformU3Ed__19_System_Collections_IEnumerator_get_Current_m606C00A419DDEFA01FD3742FE819810D6545444A (void);
-// 0x0000001C System.Void Raycast_script::Start()
+// 0x00000016 System.Void Raycast_script::Start()
 extern void Raycast_script_Start_mB8CE7BEE38F07EC87C4340F5468EE92385D9C3D8 (void);
-// 0x0000001D System.Void Raycast_script::Update()
+// 0x00000017 System.Void Raycast_script::Update()
 extern void Raycast_script_Update_mF1F2E1447C8E7B493D7D99400EEC3D2D0337BAA8 (void);
-// 0x0000001E System.Void Raycast_script::.ctor()
+// 0x00000018 System.Void Raycast_script::.ctor()
 extern void Raycast_script__ctor_m1160A317B05692B567A2A008671F88720530A4BB (void);
-static Il2CppMethodPointer s_methodPointers[30] = 
+static Il2CppMethodPointer s_methodPointers[24] = 
 {
 	earthBtn_Start_mF36CCC79F51903E094564A9DFA4309E9C8075BA0,
 	earthBtn_Update_m12F10C762583730032D111309C4D1CF4EF86BA8F,
@@ -93,19 +81,13 @@ static Il2CppMethodPointer s_methodPointers[30] =
 	MarsBtn__ctor_m608AD704624F0EC4A0DFAE2A951A780FE5271358,
 	OriginScript_Start_m77E46D73780238D292E97396C45C145CA60CD375,
 	OriginScript_Update_mB00E5F41515112D3682E0AA526977AB035DB465F,
-	OriginScript_transform_mBDECE436CB53C6EA54204F2432005F95C9F8B3D5,
+	OriginScript_transform_mB038B82D93298E985230210A4E12ADC09F43A058,
 	OriginScript__ctor_m7BFD25907BE6315D25F4E6B2F5C2CECBECB18C57,
-	U3CtransformU3Ed__19__ctor_mB8460E504222854AAA7E25035985C1C3FAF3135B,
-	U3CtransformU3Ed__19_System_IDisposable_Dispose_m77B3DE20C1EBBB89334D8640C5FA1D05FE739E8B,
-	U3CtransformU3Ed__19_MoveNext_mF3BAB56C1E0EDF93BC968F886DD395D992014A5C,
-	U3CtransformU3Ed__19_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFD8D88DBD7F7E6008B99A39C792555EFB0ED620C,
-	U3CtransformU3Ed__19_System_Collections_IEnumerator_Reset_mCAC51DF732D71B0F5A33C4376CB4C118BE3B50A7,
-	U3CtransformU3Ed__19_System_Collections_IEnumerator_get_Current_m606C00A419DDEFA01FD3742FE819810D6545444A,
 	Raycast_script_Start_mB8CE7BEE38F07EC87C4340F5468EE92385D9C3D8,
 	Raycast_script_Update_mF1F2E1447C8E7B493D7D99400EEC3D2D0337BAA8,
 	Raycast_script__ctor_m1160A317B05692B567A2A008671F88720530A4BB,
 };
-static const int32_t s_InvokerIndices[30] = 
+static const int32_t s_InvokerIndices[24] = 
 {
 	4423,
 	4423,
@@ -126,14 +108,8 @@ static const int32_t s_InvokerIndices[30] =
 	4423,
 	4423,
 	4423,
-	3119,
+	3578,
 	4423,
-	3555,
-	4423,
-	4258,
-	4326,
-	4423,
-	4326,
 	4423,
 	4423,
 	4423,
@@ -142,7 +118,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	30,
+	24,
 	s_methodPointers,
 	0,
 	NULL,

@@ -92,7 +92,7 @@ public class OriginScript : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.collider.tag == "Planet")
+                if (hit.collider.tag == "Button" || hit.collider.tag == "Planet")
                 {
                     if (hit.collider.name == "Earth")
                     {
