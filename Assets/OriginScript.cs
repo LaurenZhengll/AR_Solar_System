@@ -10,6 +10,7 @@ public class OriginScript : MonoBehaviour
     public static string btnSelected;
     public GameObject earthPrefab;
     public GameObject marsPrefab;
+    public GameObject jupiterPrefab;
     GameObject landPrefab;
     Dictionary<GameObject, Tuple<GameObject, bool, bool>> prefabMap = new Dictionary<GameObject, Tuple<GameObject, bool, bool>>();
     GameObject landedObject;
@@ -44,6 +45,10 @@ public class OriginScript : MonoBehaviour
         else if (btnSelected == "Mars")
         {
             landPrefab = marsPrefab;
+        }
+        else if (btnSelected == "Jupiter")
+        {
+            landPrefab = jupiterPrefab;
         }
         transform(landPrefab);
 
@@ -102,7 +107,7 @@ public class OriginScript : MonoBehaviour
                 else
                 {
                     //yield return new WaitForSeconds(Time.deltaTime / 2f);
-                        
+                                                                     
                     if (!buttonClicked && aRRaycastManager.Raycast(Input.GetTouch(0).position, hits, TrackableType.PlaneWithinPolygon)) // Input.GetTouch(0): first touch point. if user touch position within hits
                     {
                         var firstHitPose = hits[0].pose; // hit[0] is the first hitted plane
@@ -115,8 +120,8 @@ public class OriginScript : MonoBehaviour
                         else
                         {
                             landedObject.transform.position = firstHitPose.position;
-                        }
-                    }
+                        }                        
+                    }                 
                 }
             }
         }
