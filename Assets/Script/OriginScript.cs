@@ -24,6 +24,7 @@ public class OriginScript : MonoBehaviour
 
     ARRaycastManager aRRaycastManager;
     List<ARRaycastHit> hits = new List<ARRaycastHit>(); // ar raycast hits a list of planes
+    ARPlaneManager aRPlaneManager;
 
     Vector2 touchPoint1;
     Vector2 touchPoint2;
@@ -39,6 +40,9 @@ public class OriginScript : MonoBehaviour
     void Start()
     {
         aRRaycastManager = GetComponent<ARRaycastManager>();
+        aRPlaneManager = GetComponent<ARPlaneManager>();
+        aRRaycastManager.enabled = false;
+        aRPlaneManager.enabled = false;
     }
 
     // Update is called once per frame
@@ -101,8 +105,6 @@ public class OriginScript : MonoBehaviour
         //    currTransCoroutine = transform(landPrefab);
         //    StartCoroutine(currTransCoroutine);
         //}
-
-
     }
 
     void transform(GameObject landPrefab)
@@ -125,35 +127,65 @@ public class OriginScript : MonoBehaviour
 
         if (Input.touchCount == 1) // touch point == 1. if user touch screen using one finger, land or move the object
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.collider.tag == "Button" || hit.collider.tag == "Planet")
-                {
-                    if (hit.collider.name == "Earth")
-                    {
+            //Ray ray = camera.main.screenpointtoray(input.touches[0].position);
+            //if (physics.raycast(ray, out raycasthit hit))
+            //{
+            //    if (hit.collider.tag == "button" || hit.collider.tag == "planet")
+            //    {
+            //        if (hit.collider.name == "earth")
+            //        {
 
-                    }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        //yield return new waitforseconds(time.deltatime / 2f);
+
+            //        if (!buttonclicked && arraycastmanager.raycast(input.gettouch(0).position, hits, trackabletype.planewithinpolygon)) // input.gettouch(0): first touch point. if user touch position within hits
+            //        {
+            //            var firsthitpose = hits[0].pose; // hit[0] is the first hitted plane
+            //            if (!landed) // if the object is not landed
+            //            {
+            //                landedobject = instantiate(landprefab, firsthitpose.position, firsthitpose.rotation);  // land the prefab at the plane's position and rotation
+            //                landed = true;
+            //                prefabmap.add(landprefab, new tuple<gameobject, bool, bool>(landedobject, landed, firstpinch));
+            //            }
+            //            else
+            //            {
+            //                landedobject.transform.position = firsthitpose.position;
+            //            }
+            //        }
+            //    }
+            //}
+        
+
+            if (aRRaycastManager.Raycast(Input.GetTouch(0).position, hits, TrackableType.PlaneWithinPolygon)) // Input.GetTouch(0): first touch point. if user touch position within hits
+            {
+                var firstHitPose = hits[0].pose; // hit[0] is the first hitted plane
+                if (!landed) // if the object is not landed
+                {
+                    landedObject = Instantiate(landPrefab, firstHitPose.position, firstHitPose.rotation);  // land the prefab at the plane's position and rotation
+                    landed = true;
+                    prefabMap.Add(landPrefab, new Tuple<GameObject, bool, bool>(landedObject, landed, firstPinch));
                 }
                 else
                 {
-                    //yield return new WaitForSeconds(Time.deltaTime / 2f);
-                                                                     
-                    if (!buttonClicked && aRRaycastManager.Raycast(Input.GetTouch(0).position, hits, TrackableType.PlaneWithinPolygon)) // Input.GetTouch(0): first touch point. if user touch position within hits
-                    {
-                        var firstHitPose = hits[0].pose; // hit[0] is the first hitted plane
-                        if (!landed) // if the object is not landed
-                        {
-                            landedObject = Instantiate(landPrefab, firstHitPose.position, firstHitPose.rotation);  // land the prefab at the plane's position and rotation
-                            landed = true;
-                            prefabMap.Add(landPrefab, new Tuple<GameObject, bool, bool>(landedObject, landed, firstPinch));
-                        }
-                        else
-                        {
-                            landedObject.transform.position = firstHitPose.position;
-                        }                        
-                    }                 
+                    landedObject.transform.position = firstHitPose.position;
                 }
+
+                aRRaycastManager.enabled = false;
+                //aRPlaneManager.enabled = false;
+                foreach (var go in aRPlaneManager.trackables)
+                {
+                    aRPlaneManager.enabled = false;
+                }
+                buttonClicked = false;
+            }
+
+            if (buttonClicked)
+            {
+                aRRaycastManager.enabled = true;
+                aRPlaneManager.enabled = true;
             }
         }
 
